@@ -145,6 +145,147 @@
 }
 
 </style>
+ <style>
+.transaction-ending-balance {
+    margin-right: 10px; /* Right se 10px space */
+}
+</style>
+     <style>
+          .title-svg-icon {
+  height: 27px; /* or any smaller height you want */
+  width: auto; /* keep aspect ratio */
+}
+
+        </style>
+           <style>
+    /* Active main menu */
+    .navs {
+      background-color: #e8f0fe;
+      color: #1a73e8;
+      border-left: 7px solid #1a73e8;
+      border-top-right-radius: 30px !important;
+      border-bottom-right-radius: 30px !important;
+      padding: 10px;
+    }
+
+    /* Inactive main menu */
+    .navs1,
+    .navs2 {
+      background-color: transparent;
+      color: #454647;
+      border-left: 7px solid transparent;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      padding: 10px;
+    }
+
+    /* Active submenu link */
+    .active-link {
+      background-color: #e8f0fe;
+      color: #1a73e8;
+      border-left: 7px solid #1a73e8;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    /* Inactive submenu link */
+    .inactive-link {
+      background-color: #ffffff;
+      color: #454647;
+      border-left: 7px solid transparent;
+    }
+
+    /* Bullets */
+    .bullet-blue {
+      color: #1a73e8;
+      font-size: 13px !important;
+    }
+
+    .bullet-grey {
+      color: #707070;
+      font-size: 13px !important;
+    }
+
+    /* Payments title ka font size */
+    .nav-link-text {
+      font-size: 16px !important;
+    }
+
+    /* Submenu text ka font size */
+    .btn-toggle-nav .nav-link span {
+      font-size: 13px !important;
+    }
+  </style>
+  <style>
+  .hover-trasiton-card:hover{
+    background-color: #1a73e815;
+  }
+</style>
+  <style>
+
+  @media (max-width: 992px) {
+.main-content{
+    padding: 0px 20px;
+}
+.dropdown-togglesa{
+    display: block !important;
+    justify-content: end;
+    margin-top: 5px !important;
+    padding: 0px 10px;
+}
+.dropdown-togglesa .dropdown button{
+    width: 300px !important;
+}
+  }
+  </style>
+  <style>
+  /* Base styles for all screen sizes */
+  .dropdown-group {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically by default (for small screens) */
+    align-items: flex-end; /* Aligns items to the end (right) */
+    gap: 0.5rem; /* Adds space between stacked items */
+  }
+
+  .dropdown-group .dropdown-btn {
+    min-width: 220px; /* Use a fixed width for consistent size */
+    border-bottom: 1px solid lightgray; /* Adds the separator line to the button */
+    padding-bottom: 0.5rem;
+    display: flex; /* Enables flexbox on the button itself */
+    justify-content: space-between; /* Pushes the content to the left and right */
+    align-items: center;
+  }
+  
+  /* Hide the default dropdown-toggle arrow */
+  .dropdown-group .dropdown-toggle::after {
+      display: none;
+  }
+
+  /* Media query for screens wider than 576px (small and up) */
+  @media (min-width: 576px) {
+    .dropdown-group {
+      flex-direction: row; /* Arranges items horizontally */
+      gap: 1rem; /* Adds space between horizontal items */
+    }
+    
+    .dropdown-group .dropdown-btn {
+        border-bottom: none; /* Removes the border for horizontal view */
+        padding-bottom: 0;
+    }
+  }
+</style>
+<style>
+  /* This style applies to the element only when it does NOT have the 'is-active' class */
+  .transaction-header:not(.is-active):hover {
+    /* Adds a shadow when the mouse hovers over the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Optional: Add a transition for a smooth effect on the initial state */
+  .transaction-header {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+</style>
   </head>
   <body>
 <!-- Full page loader overlay -->
@@ -229,13 +370,7 @@
           <span class="nav-link-text ms-3">Sites</span>
           </a>
         </li>
-          <style>
-          .title-svg-icon {
-  height: 27px; /* or any smaller height you want */
-  width: auto; /* keep aspect ratio */
-}
-
-        </style>
+     
       <li class="nav-item ">
           <a class="nav-link" aria-current="page" href="#">
           <svg class="title-svg-icon _ngcontent-dot-20" viewBox="0 0 24 24"><path class="_ngcontent-dot-20" d="M10.4 2.5C8.1 2.5 6.2 4.4 6.2 6.7C6.2 9 8.1 11 10.4 11C12.7 11 14.6 9.1 14.6 6.8C14.6 4.5 12.8 2.5 10.4 2.5ZM10.4 4.6C11.6 4.6 12.5 5.5 12.5 6.7C12.5 7.9 11.6 8.8 10.4 8.8C9.2 8.8 8.3 7.9 8.3 6.7C8.3 5.5 9.3 4.6 10.4 4.6ZM13.6 12L17.8 9.9L22 12V14.8C22 17.4 20.2 19.8 17.8 20.4C15.4 19.8 13.6 17.4 13.6 14.8V12ZM12.6 12.2C11.8 12.1 11 12 10.4 12C7.6 12 2 13.4 2 16.2V19.4H14.3C13.8 18.8 13.3 18.1 13 17.3H4.1V16.3C4.3 15.5 7.6 14.2 10.4 14.2C11.1 14.2 11.8 14.3 12.5 14.4V12.2H12.6Z"></path></svg>
@@ -278,70 +413,7 @@ Policy center</span>
       <img src="assets/iamges/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Payments icon" width="24" height="24">
         <span class="nav-link-text">Payments</span>
         </a>
-    <style>
-    /* Active main menu */
-    .navs {
-      background-color: #e8f0fe;
-      color: #1a73e8;
-      border-left: 7px solid #1a73e8;
-      border-top-right-radius: 30px !important;
-      border-bottom-right-radius: 30px !important;
-      padding: 10px;
-    }
-
-    /* Inactive main menu */
-    .navs1,
-    .navs2 {
-      background-color: transparent;
-      color: #454647;
-      border-left: 7px solid transparent;
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-      padding: 10px;
-    }
-
-    /* Active submenu link */
-    .active-link {
-      background-color: #e8f0fe;
-      color: #1a73e8;
-      border-left: 7px solid #1a73e8;
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
-
-    /* Inactive submenu link */
-    .inactive-link {
-      background-color: #ffffff;
-      color: #454647;
-      border-left: 7px solid transparent;
-    }
-
-    /* Bullets */
-    .bullet-blue {
-      color: #1a73e8;
-      font-size: 13px !important;
-    }
-
-    .bullet-grey {
-      color: #707070;
-      font-size: 13px !important;
-    }
-
-    /* Payments title ka font size */
-    .nav-link-text {
-      font-size: 16px !important;
-    }
-
-    /* Submenu text ka font size */
-    .btn-toggle-nav .nav-link span {
-      font-size: 13px !important;
-    }
-  </style>
-  <style>
-  .hover-trasiton-card:hover{
-    background-color: #1a73e815;
-  }
-</style>
+ 
     <div class="collapse show" id="paymentsSubmenu">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a class="nav-link kk ps-5 py-2 active-link" href="payment.html"><i class="fa-solid fa-circle bullet-blue"></i> <span class="ms-3">Payments info</span></a></li>
@@ -369,23 +441,7 @@ Feedback</span>
     </ul>
  
 </div>
-  <style>
 
-  @media (max-width: 992px) {
-.main-content{
-    padding: 0px 20px;
-}
-.dropdown-togglesa{
-    display: block !important;
-    justify-content: end;
-    margin-top: 5px !important;
-    padding: 0px 10px;
-}
-.dropdown-togglesa .dropdown button{
-    width: 300px !important;
-}
-  }
-  </style>
   <div class="main-content" id="mainContent" style="margin-top: 70px;">
 
       <div class="row mb-4 ">
@@ -397,42 +453,6 @@ Feedback</span>
     <div class="mb-4">
         <span style="font-size: 18px;"><span class="text-muted">Payments</span> &nbsp; &nbsp;>  &nbsp; &nbsp; <span style="font-weight: 400;">Transactions</span>  </span>
     </div>
-<style>
-  /* Base styles for all screen sizes */
-  .dropdown-group {
-    display: flex;
-    flex-direction: column; /* Stacks items vertically by default (for small screens) */
-    align-items: flex-end; /* Aligns items to the end (right) */
-    gap: 0.5rem; /* Adds space between stacked items */
-  }
-
-  .dropdown-group .dropdown-btn {
-    min-width: 220px; /* Use a fixed width for consistent size */
-    border-bottom: 1px solid lightgray; /* Adds the separator line to the button */
-    padding-bottom: 0.5rem;
-    display: flex; /* Enables flexbox on the button itself */
-    justify-content: space-between; /* Pushes the content to the left and right */
-    align-items: center;
-  }
-  
-  /* Hide the default dropdown-toggle arrow */
-  .dropdown-group .dropdown-toggle::after {
-      display: none;
-  }
-
-  /* Media query for screens wider than 576px (small and up) */
-  @media (min-width: 576px) {
-    .dropdown-group {
-      flex-direction: row; /* Arranges items horizontally */
-      gap: 1rem; /* Adds space between horizontal items */
-    }
-    
-    .dropdown-group .dropdown-btn {
-        border-bottom: none; /* Removes the border for horizontal view */
-        padding-bottom: 0;
-    }
-  }
-</style>
 
 
 <div class="dropdown-group justify-content-end">
@@ -485,23 +505,29 @@ Feedback</span>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<style>
-  /* This style applies to the element only when it does NOT have the 'is-active' class */
-  .transaction-header:not(.is-active):hover {
-    /* Adds a shadow when the mouse hovers over the div */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
 
-  /* Optional: Add a transition for a smooth effect on the initial state */
-  .transaction-header {
-    transition: box-shadow 0.3s ease-in-out;
-  }
-</style>
 <!-- A.html -->
 
 
 <div id="months-container" style="font-family: 'Roboto', Arial, sans-serif;"></div>
-<script>
+
+
+    
+    
+  
+
+  </div>
+  </div>
+  </div>
+  </div>
+     <!-- <footer class="text-end" style="padding-right: 15px">
+      <p class=""><span style="font-size: 17px">&copy;</span>  2025 Google</p>
+    </footer> -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <script>
   document.addEventListener("DOMContentLoaded", function() {
     const monthsContainer = document.getElementById('months-container');
     const today = new Date();
@@ -512,7 +538,14 @@ Feedback</span>
       const month = monthNames[date.getMonth()];
       const year = date.getFullYear();
       const monthId = month.toLowerCase() + year;
-      const monthText = `${month} 1 – 5, ${year}`;
+
+      let monthText;
+      if (i === 0) {
+        const currentDay = today.getDate();
+        monthText = `${month} 1 – ${currentDay}, ${year}`;
+      } else {
+        monthText = `${month} 1 – 31, ${year}`;
+      }
 
       let transactionsHtml = "";
       let noTransactions = false;
@@ -619,68 +652,6 @@ Feedback</span>
   }
 </script>
 
-
-    
-    
-    <!-- <div class="row mt-2">
-        <div class="col-12 p-3 border rounded-2 d-flex justify-content-between align-items-center"
-            data-bs-toggle="collapse" data-bs-target="#july-collapse" aria-expanded="false" aria-controls="july-collapse" style="cursor: pointer;">
-            <p class="mb-0 fs-5 fw-bold">Jul 1 – 31, 2025</p>
-            <p class="mb-0 text-end">Ending balance: <i class="fa-solid fa-dollar-sign" style="color:#646464;font-size:13px;margin-right:2px"><span >0.00</span></i></p>
-        </div>
-        <div class="collapse" id="july-collapse">
-            <div class="row mt-2 border-bottom">
-                <div class="col-3"><span class="fs-6">Date</span></div>
-                <div class="col-3"><span class="fs-6">Description</span></div>
-                <div class="col-6 text-end"><span class="fs-6">Amount (USD)</span></div>
-            </div>
-            <div class="row border-bottom p-5 text-center">
-                <p class="fs-6">You don't have any transactions for this billing period</p>
-            </div>
-            <div class="row mt-4 text-end">
-                <p>Starting balance: <i class="fa-solid fa-dollar-sign" style="color:#646464;font-size:13px;margin-right:2px"><span >0.00</span></i></p>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="row mt-2">
-        <div class="col-12 p-3 border  rounded-2d-flex justify-content-between align-items-center"
-            data-bs-toggle="collapse" data-bs-target="#june-collapse" aria-expanded="false" aria-controls="june-collapse" style="cursor: pointer;">
-            <p class="mb-0 fs-5 fw-bold">Jun 1 – 30, 2025</p>
-            <p class="mb-0 text-end">Ending balance: <i class="fa-solid fa-dollar-sign" style="color:#646464;font-size:13px;margin-right:2px"><span >0.00</span></i></p>
-        </div>
-        <div class="collapse" id="june-collapse">
-            <div class="row mt-2 border-bottom">
-                <div class="col-3"><span class="fs-6">Date</span></div>
-                <div class="col-3"><span class="fs-6">Description</span></div>
-                <div class="col-6 text-end"><span class="fs-6">Amount (USD)</span></div>
-            </div>
-            <div class="row border-bottom p-5 text-center">
-                <p class="fs-6">You don't have any transactions for this billing period</p>
-            </div>
-            <div class="row mt-4 text-end">
-                <p>Starting balance: <i class="fa-solid fa-dollar-sign" style="color:#646464;font-size:13px;margin-right:2px"><span >0.00</span></i></p>
-            </div>
-        </div>
-    </div> -->
-
-  </div>
-  </div>
-  </div>
-  </div>
-     <!-- <footer class="text-end" style="padding-right: 15px">
-      <p class=""><span style="font-size: 17px">&copy;</span>  2025 Google</p>
-    </footer> -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- <style>
-.transaction-ending-balance {
-    margin-right: 10px; /* Right se 10px space */
-}
-</style>
- 
 <script>
 function toggleHeader(element) {
     element.classList.toggle('is-active');
